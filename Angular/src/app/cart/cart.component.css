@@ -1,0 +1,74 @@
+/* Container for the Cart page */
+.cart-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title of the cart */
+  .cart-container h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Table styling for the cart items */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #e9e9e9;
+  }
+  
+  /* Delete button styling */
+  .btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c0392b;
+  }
+  
+  /* When there are no foods in the cart */
+  .ng-template {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+  }
+  
+  /* Style for empty cart message */
+  .cart-container p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+}
+
+.homepage-image {
+  width: 100%;  /* Ensure the image takes up the full width */
+  height: auto; /* Maintain aspect ratio */
+  image-rendering: crisp-edges; 
+}
+
+.overlay-content {
+  position: absolute;
+  top: 10%;  /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to be exactly centered */
+  color: white;  /* White text on the image */
+  text-align: center;
+  z-index: 10;  /* Ensure the text and buttons appear above the image */
+}
+.content {
+  margin-top: 50px; /* Space for the fixed navbar */
+  padding: 20px;
+}
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4CAF50;
+  color: white;
+}

@@ -1,0 +1,46 @@
+<div class="overlay" *ngIf="showLogin">
+<div class="register">
+
+    <h2>User Registration</h2>
+    <form  #registrationForm="ngForm">
+      <div class="form-group">
+        <label for="name">Username</label>
+        <input
+          id="name"
+          type="text"
+          class="form-control"
+          required
+          [(ngModel)]="name"
+          name="name"
+          #nameInput="ngModel"
+        />
+        <div *ngIf="nameInput.invalid && nameInput.touched" class="text-danger">
+          Please enter username
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control"
+               required
+               [(ngModel)]="email"
+               name="email"
+               #emailInput="ngModel"
+               email> <!-- Built-in email validator -->
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger">
+          Please enter a valid email address
+        </div>
+      </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" class="form-control" required [(ngModel)]="password" name="password" #passwordInput="ngModel">
+      <div *ngIf="passwordInput.invalid && passwordInput.touched" class="text-danger">Password is required</div>
+    </div>
+  
+  
+      <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="registrationForm.invalid">Register</button>
+      <button type="button" routerLink="/" class="btn btn-secondary" (click)="closeLogin()">Cancel</button>
+    </form>
+  </div>
+  </div>

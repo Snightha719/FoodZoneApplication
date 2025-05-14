@@ -1,0 +1,41 @@
+<div class="profile-container">
+    <div class="profile-box" *ngIf="customer">
+      <h1>{{ isEditMode ? 'Edit Profile' : 'Profile' }}</h1>
+  
+      <!-- Profile Image -->
+      <div class="profile-image-container">
+        <img src="assets/images/profile.png" alt="Profile Picture" class="profile-image" />
+        <!-- <p *ngIf="!customer.imageUrl">No Profile Picture</p> -->
+      </div>
+  
+      <!-- View Profile Mode -->
+      <div *ngIf="!isEditMode">
+        <p><strong>Name:</strong> {{ customer.name }}</p>
+        <p><strong>Email:</strong> {{ customer.email }}</p>
+        <button (click)="toggleEditMode()">Edit Profile</button>
+      </div>
+  
+      <!-- Edit Profile Mode -->
+      <div *ngIf="isEditMode">
+        <form (ngSubmit)="updateProfile()">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" [(ngModel)]="updatedCustomer.name" name="name" required />
+          </div>
+  
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" [(ngModel)]="updatedCustomer.email" name="email" required />
+          </div>
+  
+          <div>
+            <button type="submit">Save Changes</button>
+            <button type="button" (click)="toggleEditMode()">Cancel</button>
+          </div>
+        </form>
+      </div>
+  
+      <button (click)="goBack()">Go Back</button>
+    </div>
+  </div>
+  

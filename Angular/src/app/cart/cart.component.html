@@ -1,0 +1,34 @@
+<div class="cart-container">
+    <h2>Your Cart</h2>
+    
+    <!-- Display foods in the cart -->
+    <div *ngIf="foodsInCart.length > 0; else noFoodInCart">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let food of foodsInCart">
+            <td>{{ food.name }}</td>
+            <td>{{ food.description }}</td>
+            <td>{{ food.price | currency }}</td>
+            <td>
+              <!-- Delete food button -->
+              <button class="btn btn-danger" (click)="deleteFoodFromCart(food.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- If the cart is empty -->
+    <ng-template #noFoodInCart>
+      <p>Your cart is empty.</p>
+    </ng-template>
+  </div>
+  

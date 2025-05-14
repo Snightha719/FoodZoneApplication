@@ -1,0 +1,57 @@
+/* Background overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the overlay is above other content */
+  }
+  
+  /* Login form container */
+  .register {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limit the width */
+    box-sizing: border-box;
+  }
+  
+  /* Style form inputs and buttons */
+  .form-group {
+    margin-bottom: 20px; /* Increased space between form fields */
+  }
+  
+  .form-control {
+    width: 100%; /* Ensure the input fields take up the full width of the container */
+    padding: 12px; /* Increased padding for larger inputs */
+    font-size: 16px; /* Increased font size for better readability */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+  }
+  
+  /* Style the buttons */
+  button {
+    width: 100%; /* Make buttons full-width */
+    padding: 12px; /* Increased button padding */
+    font-size: 16px; /* Larger button text */
+  }
+  
+  button + button {
+    margin-top: 10px; /* Add space between the buttons */
+  }
+  
+  /* Error message style */
+  .text-danger {
+    font-size: 12px;
+    color: red;
+  }
+  
+  

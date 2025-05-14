@@ -1,0 +1,38 @@
+<h1>Foods</h1>
+
+<!-- Food Grid Wrapper -->
+<div class="food-grid-wrapper">
+  <div class="mainhome">
+    <!-- Image Section -->
+    <div class="image-container">
+      <img src="assets/images/food.jpg" class="homepage-image"/>
+    
+      <!-- Text and buttons positioned on top of the image -->
+      <div class="overlay-content">
+        <h1>Welcome to My Food App</h1>
+        <div class="navbar">
+          <button routerLink="/mainhome">Home</button>
+          <button routerLink="/about">About us</button>
+          <button routerLink="/food">Foods</button>
+          <button routerLink="/restaurant">Restaurants</button>
+          <button routerLink="/profile">Profile</button>
+          <button routerLink="/cart">Cart</button>
+          <button routerLink="/">Logout</button>
+        </div>
+  <!-- Close button inside the wrapper, but above the grid -->
+
+
+  <!-- Food Grid -->
+  <div *ngIf="isFoodGridVisible" class="food-grid">
+    <div *ngFor="let food of foods$ | async" class="food-card">
+      <img [src]="food.imageUrl" alt="{{ food.name }}" class="food-image">
+      <div class="food-details">
+        <p>{{ food.name }}</p>
+        <p>{{ food.description }}</p>
+        <p><strong>Price:</strong> {{ food.price }}</p>
+        <p><strong>Type:</strong> {{ food.type }}</p>
+        <button class="btn btn-primary" (click)="addToCart(food.id)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

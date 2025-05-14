@@ -1,0 +1,60 @@
+<div class="mainhome">
+  <!-- Image Section -->
+  <div class="image-container">
+    <img src="assets/images/food.jpg" class="homepage-image"/>
+
+    <!-- Text and buttons positioned on top of the image -->
+    <div class="overlay-content">
+      <h1>Welcome to My Food App</h1>
+      <div class="navbar">
+        <button routerLink="/mainhome">Home</button>
+        <button routerLink="/about">About us</button>
+        <button routerLink="/food">Foods</button>
+        <button routerLink="/restaurant">Restaurants</button>
+        <button routerLink="/profile">Profile</button>
+        <button routerLink="/cart">Cart</button>
+        <button routerLink="/">Logout</button>
+      </div>
+
+      <div class="search-container">
+        <form (ngSubmit)="onSearch()">
+          <input type="text" id="search" name="query" [(ngModel)]="query" placeholder="Search for foods..." required>
+          <input type="submit" value="Search">
+        </form>
+      </div>
+
+      <!-- Display search results -->
+      <div *ngIf="searchResults.length > 0" class="search-results">
+        <h2>Search Results:</h2>
+        <div class="results-container">
+          <div *ngFor="let result of searchResults" class="result-item">
+            <div *ngIf="result.name">
+              <div class="food-item">
+                <!-- Food image -->
+                <img [src]="result.imageUrl" alt="{{ result.name }}" class="food-image">
+            
+                <!-- Food details -->
+                <div class="food-details">
+                  <p class="food-name">{{ result.name || 'No Name Available' }}</p> <!-- Display the food name -->
+                  <p class="food-price">{{ result.price ? (result.price | currency) : 'Price not available' }}</p> <!-- Display food price -->
+                  <button (click)="addToCart(result.id)">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="result.restaurantName">
+              <!-- Display Restaurant Details -->
+              <div class="restaurant-item">
+                <h3>{{ result.restaurantName }}</h3>
+                <p>{{ result.address }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Display message if no results found -->
+     
+    </div>
+  </div>
+</div>
